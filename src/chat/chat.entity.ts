@@ -11,10 +11,10 @@ export class Message {
   id: number;
 
   @Column()
-  sender: string;
+  sender: number;
 
   @Column()
-  receiver: string;
+  receiver: number;
 
   @Column()
   message: string;
