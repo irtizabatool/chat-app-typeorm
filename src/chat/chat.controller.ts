@@ -8,11 +8,11 @@ export class ChatController {
   constructor(private chatService: ChatService) {}
   @Get()
   async getMessages(@Query() filterDto: FilterDto) {
-    return await this.chatService.getMessages(filterDto);
+    return this.chatService.getMessages(filterDto);
   }
 
   @Post()
   async insertMessage(@Body() createChatDto: CreateChatDto) {
-    return await this.chatService.insertMessage(createChatDto);
+    return this.chatService.insertMessage(createChatDto);
   }
 }

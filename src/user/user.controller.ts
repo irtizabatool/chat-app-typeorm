@@ -1,5 +1,5 @@
 import { Controller, Get } from '@nestjs/common';
-import { User } from './user.entity';
+import { User } from '../chat/user.entity';
 import { UserService } from './user.service';
 
 @Controller('user')
@@ -8,6 +8,6 @@ export class UserController {
 
   @Get()
   async getUsers(): Promise<User[]> {
-    return await this.userService.getUsers();
+    return this.userService.getUsers();
   }
 }

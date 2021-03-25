@@ -30,8 +30,9 @@ $(function () {
           receiver: parseInt(receiver.val()),
         },
         success: function (response) {
+          console.log(response);
           response.forEach((user) => {
-            if (user.sender === parseInt(sender.val())) {
+            if (user.sender.id === parseInt(sender.val())) {
               $('#messages').append(
                 '<p style="text-align:left">' + user.message + '<p>',
               );
@@ -61,7 +62,7 @@ $(function () {
         },
         success: function (response) {
           response.forEach((user) => {
-            if (user.sender === parseInt(sender.val())) {
+            if (user.sender.id === parseInt(sender.val())) {
               $('#messages').append(
                 '<p style="text-align:left">' + user.message + '<p>',
               );

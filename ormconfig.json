@@ -5,6 +5,10 @@
     "password": "root",
     "database": "chats",
     "entities": ["dist/**/*.entity{.ts,.js}"],
-    "synchronize": true,
-    "logging": true
+    "synchronize": false,
+    "logging": true,
+    "migrations": ["dist/src/chat/chats/migrations/*.js"],
+    "cli": {
+    "migrationsDir": "src/chat/chats/migrations"
+  }
 }

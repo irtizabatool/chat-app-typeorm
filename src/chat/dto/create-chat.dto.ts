@@ -1,5 +1,5 @@
 export class CreateChatDto {
-  sender: number;
-  receiver: number;
+  senderId: number;
+  receiverId: number;
   message: string;
 }
