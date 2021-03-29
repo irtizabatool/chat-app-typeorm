@@ -13,9 +13,6 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 @Module({
   imports: [
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'src', 'public'),
-    }),
     TypeOrmModule.forRoot({
       type: 'postgres',
       host: process.env.DB_HOST,
@@ -29,6 +26,9 @@ dotenv.config();
       cli: {
         migrationsDir: 'src/chat/chats/migrations',
       },
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'src', 'public'),
     }),
     ChatModule,
     UserModule,
