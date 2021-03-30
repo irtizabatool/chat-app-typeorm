@@ -15,17 +15,13 @@ dotenv.config();
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: process.env.DB_HOST,
-      port: parseInt(process.env.DB_PORT, 10),
-      username: process.env.DB_USER,
-      password: process.env.DB_PW,
-      database: process.env.DB_DB,
+      host: process.env.TYPEORM_HOST,
+      port: parseInt(process.env.TYPEORM_PORT, 10),
+      username: process.env.TYPEORM_USERNAME,
+      password: process.env.TYPEORM_PASSWORD,
+      database: process.env.TYPEORM_DATABASE,
       entities: [Message, User],
-      synchronize: false,
-      migrations: ['dist/src/chat/chats/migrations/*.js'],
-      cli: {
-        migrationsDir: 'src/chat/chats/migrations',
-      },
+      synchronize: process.env.TYPEORM_SYNCHRONIZE === 'true',
     }),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'src', 'public'),

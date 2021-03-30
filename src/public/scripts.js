@@ -4,7 +4,6 @@ $(function () {
     $.ajax({
       url: '/user',
       success: (response) => {
-        console.log(response);
         response.forEach((user) => {
           $('#sender').append(
             '<option value = ' + user.id + '>' + user.name + '</option>',
