@@ -9,7 +9,7 @@ import { User } from './user.entity';
 
 @Entity()
 export class Message {
-  @PrimaryGeneratedColumn()
+  @PrimaryGeneratedColumn('increment')
   id: number;
 
   @ManyToOne(() => User, (user) => user.sent)

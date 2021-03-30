@@ -6,7 +6,7 @@ import {
   TableForeignKey,
 } from 'typeorm';
 
-export class ChatMigrations1617123569259 implements MigrationInterface {
+export class ChatMigrations1617130484356 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
@@ -16,6 +16,7 @@ export class ChatMigrations1617123569259 implements MigrationInterface {
             name: 'id',
             type: 'int',
             isPrimary: true,
+            isGenerated: true,
           },
           {
             name: 'name',
@@ -33,6 +34,7 @@ export class ChatMigrations1617123569259 implements MigrationInterface {
             name: 'id',
             type: 'int',
             isPrimary: true,
+            isGenerated: true,
           },
           {
             name: 'message',
